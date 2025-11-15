@@ -1,0 +1,32 @@
+image {
+    display: block;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.gallery-item {
+    width: 360px;
+    height: 200px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
