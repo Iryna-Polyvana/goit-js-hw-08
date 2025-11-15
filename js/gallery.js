@@ -88,10 +88,11 @@ refs.galleryList.insertAdjacentHTML('beforeend', galleryTemplate);
 // Додавання делегування подій
 const onGalleryListEvent = event => {
     event.preventDefault();
-    if (event.target === event.currentTarget) {
-        return;
+    if (event.target.classList.contains('gallery-image')) {
+        const largeImageUrl = event.target.dataset.source;
+        instance.element().querySelector('.modal-gallery-image').src = largeImageUrl;
+        instance.show();
     }
-    console.log(event.target.dataset.source);
 };
 refs.galleryList.addEventListener('click', onGalleryListEvent);
 
@@ -101,6 +102,3 @@ const instance = basicLightbox.create(`
     <img class=modal-gallery-image src="" width="800" height="600">
 `)
 
-// instance.show()
-console.log(instance);
-refs.modalImage.classList.add('is-open')
